@@ -118,5 +118,60 @@ Refresh the osTicket site in your browser, observe the changes
 - New Permissions -> Everyone -> All
 
 
+<h2>Continue Setting up osTicket in the browser
+ </h2>
+
+- (click Continue)
+- Name Helpdesk
+-Default email (receives email from customers)
+
+
+
+- From the “osTicket-Installation-Files” folder, install HeidiSQL.
+
+-Open Heidi SQL
+
+-Create a new session, root/root
+
+-Connect to the session
+
+-Create a database called “osTicket”
+
+<img width="889" height="584" alt="image" src="https://github.com/user-attachments/assets/b52da41a-ccb1-47b3-86e5-13670ce78a16" />
+<img width="655" height="513" alt="image" src="https://github.com/user-attachments/assets/18411a90-f615-4134-9666-e6057b830188" />
+<img width="441" height="384" alt="image" src="https://github.com/user-attachments/assets/a4ab7105-4d80-463d-827a-dec333bc0a63" />
+<img width="834" height="525" alt="image" src="https://github.com/user-attachments/assets/245ca2dd-e69e-4d9f-bf34-ae9a76a4eed9" />
+
+<img width="973" height="585" alt="image" src="https://github.com/user-attachments/assets/1d1accd0-8cce-4e1a-95b1-9bdbf7ac5a02" />
+<img width="648" height="548" alt="image" src="https://github.com/user-attachments/assets/24fa21e1-3947-4057-bb6b-0f29d587a459" />
+<img width="1072" height="679" alt="image" src="https://github.com/user-attachments/assets/2ffcec44-dd6f-4578-a60d-d43e8ae49795" />
+
+<h2> Continue Setting up osTicket in the browser<h2>
+
+  
+  
+- MySQL Database: osTicket
+  
+- MySQL Username: root
+- 
+- MySQL Password: root
+- 
+- Click “Install Now!”
+
+
+
+
+
+<img width="853" height="1247" alt="image" src="https://github.com/user-attachments/assets/3ace9a67-30bc-4362-9a29-8b165728b1bc" />
+
+<img width="1004" height="663" alt="image" src="https://github.com/user-attachments/assets/e6ca1603-726e-4603-9c3a-00c8836499d5" />
+<img width="1232" height="600" alt="image" src="https://github.com/user-attachments/assets/85e247fa-a785-4ddb-b987-62726e1c55cc" />
+
+
+
+
+
+
+
 
 
