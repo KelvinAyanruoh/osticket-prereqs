@@ -6,9 +6,7 @@
 This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
 
 
-<h2>Video Demonstration</h2>
 
-- ### [YouTube: How To Install osTicket with Prerequisites](https://www.youtube.com)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -33,89 +31,189 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   
 
 <h2>Installation Steps</h2>
+- 1. We  download the osTicket-Installation-Files.zip and unzip it onto your desktop. and this webserver will server our osticketing system   
+<img width="875" height="550" alt="image" src="https://github.com/user-attachments/assets/68823c6f-699b-463d-a5a3-e507aec4c677" />
 
-<p>
-<img width="1174" height="1059" alt="image" src="https://github.com/user-attachments/assets/1be6c422-a439-4251-9073-1794ba062469" />
 
-</p>
-<p>
-After installing the rewrite AMD, create the directory C:\PHP, unzip, and copy the php folder into the C:\PHP” folder
+- 2. To proceed with the installation, we need to enable the IIS web server to support CGI. (IIS is Microsoft's web server used to host websites and web apps on Windows.)
 
-<br />
+      -(World Wide Web Services -> Application Development Features -> [X] CGI)
+     <img width="1048" height="528" alt="image" src="https://github.com/user-attachments/assets/bbf21219-868f-47d9-97d0-dc341569c68b" />
 
-<p>
-<img width="1248" height="438" alt="image" src="https://github.com/user-attachments/assets/48dfe2c5-09f7-4262-849c-25f785b30f83" />
+- How do we know the IIS Web server is running? We would use a loopback IP address.
 
-</p>
-<p>
-Now we install VC_redist.x86.exe. and MySQL 5.5.62 (mysql-5.5.62-win32.msi) and set up MySQL
+- Open a web page, put in the Loopback IP address, and it brings up a default web page of IIS. making our machine a web server
+  <img width="938" height="518" alt="image" src="https://github.com/user-attachments/assets/fdc1c445-06bb-4830-9411-f3bc54887b39" />
 
-- Typical Setup ->
-- Launch Configuration Wizard (after install) ->
-- Standard Configuration ->
+- 3. Install PHP Manager for IIS from the Ostiket folder. PHP allows the web server to run PHP scripts, which are the backbone of many web applications and OS ticket runs on PHP
+     <img width="698" height="437" alt="image" src="https://github.com/user-attachments/assets/04e250be-697f-407d-b377-5d532806e81f" />
+
+- 4. Install the Rewrite Module from the same folder
+
+        - This module is for the IIS web server that enables powerful and flexible rules 
+        -  and it ensures the admin and helpdesk portal routing works properly
+
+    
+<img width="901" height="476" alt="image" src="https://github.com/user-attachments/assets/14f73313-1e9f-4116-b712-eefc51aa5b0f" />
+
+
+ - 5. Next, we create a Directory for PHP in our C drive,
+      
+        <img width="910" height="446" alt="image" src="https://github.com/user-attachments/assets/46304e57-2459-4bf2-8db8-e85c5d80138b" />
+
+
+        -  and then unzip PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip) into the “C:\PHP” folder
+     
+        -  This will allow IIS to run PHP code
+          <img width="903" height="492" alt="image" src="https://github.com/user-attachments/assets/e070d9d7-a0f8-482d-8795-19023a9dab92" />
+
+
+
+  - 6. Now we install VC_redist.x86.exe. from the osticket folder(It is required to make PHP work on Windows, and since osTicket is built with PHP, it is a critical dependency for a successful osTicket installation on IIS.
   
+
+    <img width="808" height="414" alt="image" src="https://github.com/user-attachments/assets/91703a66-42f4-4035-b744-fe9675cc1ff2" />
+
+
+   - 7. and MySQL 5.5.62 (mysql-5.5.62-win32.msi) and set up MySQL
+        MySQL is a database that Osteckit uses to store all our data 
+        <img width="857" height="420" alt="image" src="https://github.com/user-attachments/assets/f248c343-2b40-4e36-a6f3-4ea99e2cfea4" />
+- Typical Setup ->
+
+<img width="504" height="389" alt="image" src="https://github.com/user-attachments/assets/cfb386c1-b75b-41cf-a260-e7e8a873f8a4" />
+
+
+- Launch Configuration Wizard (after install) ->
+
+- input username and password credentials
+- <img width="340" height="258" alt="image" src="https://github.com/user-attachments/assets/7f34954a-faec-4bf7-a4a0-3f505e9a8fac" />
+
+
+- Standard Configuration ->
+
+
+
+  <img width="572" height="377" alt="image" src="https://github.com/user-attachments/assets/215e086b-b824-456b-a0e5-981b04aa84b1" />
+
+
+
+
 </p>
 <br />
 
-<p>
-<img width="1163" height="546" alt="image" src="https://github.com/user-attachments/assets/7bd893e7-9b74-47b2-8c36-2875a922a3bd" />
-
-<img width="1234" height="580" alt="image" src="https://github.com/user-attachments/assets/1ba98594-04b8-46e6-a022-2de3602c9ba1" />
+- 8. After installing MySQL, we are going to configure PHP
 
 
-</p>
-<p>
-Open IIS as an Admin
+     -Open IIS
+     - Double click on PHP
+    
+       <img width="581" height="284" alt="image" src="https://github.com/user-attachments/assets/1506ca7b-623b-4201-bcd2-5099d4a25fd7" />
 
-Register PHP from within IIS (PHP Manager -> C:\PHP\php-cgi.exe)
+     -Then we are going to register PHP from within the IIS manager, making our web server aware of where PHP IS
 
-Reload IIS (Open IIS, Stop and Start the server)
-<img width="1285" height="985" alt="image" src="https://github.com/user-attachments/assets/5d8464f0-97b1-49c5-9796-74d8cba5ac94" />
-<img width="1032" height="509" alt="image" src="https://github.com/user-attachments/assets/c8a59df9-54ac-4fa3-842d-cc426d5a7dc4" />
+  <img width="629" height="536" alt="image" src="https://github.com/user-attachments/assets/538f7e5e-0c86-4e4e-bfbe-71bfd0091023" />
 
+- Browse to locate PHP CGI in our C drive
 
-</p>
-<br />
-
-<h2>INSTALL OSTICKET </h2>
+  <img width="754" height="513" alt="image" src="https://github.com/user-attachments/assets/944a87c7-7ad7-4e3c-9060-d2fa98e5e994" />
 
 
-</p>
-<p>
-From the “osTicket-Installation-Files” folder, unzip “osTicket-v1.15.8.zip” and copy the “upload” folder into “c:\inetpub\wwwroot”
-Within “c:\inetpub\wwwroot”, Rename “upload” to “osTicket”
-Reload IIS (Open IIS, Stop and Start the server)
+  
 
-<img width="1215" height="1205" alt="image" src="https://github.com/user-attachments/assets/e7f8e01a-0560-468a-a089-fec1c82e37e1" />
+  
 
-</p>
+
+- Reload IIS (Open IIS, Stop, and Start the server)
+
+<img width="991" height="330" alt="image" src="https://github.com/user-attachments/assets/6db9a0a8-a24c-448f-a5d0-ca4dcf1884ae" />
+
+
+
+- 9. </p>Install ostall ticket
 <p>
 
-Reload IIS (Open IIS, Stop and Start the server)
+-From the “osTicket-Installation-Files” folder, unzip “osTicket-v1.15.8.zip” and copy the “upload” folder into “c:\inetpub\wwwroot”
+Within “c:\inetpub\wwwroot”, rename “upload” to “osTicket”
+
+
+
+<img width="551" height="340" alt="image" src="https://github.com/user-attachments/assets/d805abe4-d8aa-4294-890c-f8a5ad477d0a" />
+
+
+
+
+<img width="792" height="427" alt="image" src="https://github.com/user-attachments/assets/882d1f87-33ae-4f22-a6c6-452c44455734" />
+
+
+
+
+- 10.** Stop and Reset ISS**
+ 
+
+
+
+   <img width="567" height="398" alt="image" src="https://github.com/user-attachments/assets/6bbb9eb3-5561-4668-9338-c02d24e855b6" />
+
+
+
+
+- 11. Load the Os ticket site
 
 Go to sites -> Default -> osTicket
 On the right, click “Browse *:80”
+<img width="1329" height="645" alt="image" src="https://github.com/user-attachments/assets/b435fd0f-6e25-4fa5-8ea6-c4d1d6b078f0" />
+
+
+
+
+
 
 Note that some extensions are not enabled
-Go back to IIS, sites -> Default -> osTicket
-Double-click PHP Manager
-Click “Enable or disable an extension”
-Enable: php_imap.dll
-Enable: php_intl.dll
-Enable: php_opcache.dll
-Refresh the osTicket site in your browser, observe the changes
-<img width="1300" height="1210" alt="image" src="https://github.com/user-attachments/assets/ee953948-ee4c-46a3-9e46-3ffd5ff1b63f" />
-<img width="940" height="617" alt="image" src="https://github.com/user-attachments/assets/26008801-9990-48f1-83a8-6ee787e8fee6" />
+- Go back to IIS, sites -> Default -> osTicket
+
+- Double-click PHP Manager
+  <img width="581" height="284" alt="image" src="https://github.com/user-attachments/assets/3224b042-9925-4f5f-8898-bedd5b3281aa" />
 
 
 
-- Rename: ost-config.php
+  
+  
+- Click “Enable or disable an extension.”
+
+ <img width="762" height="563" alt="image" src="https://github.com/user-attachments/assets/578037e7-77bf-4ca0-9918-b6dc23c39565" />
+
+- Enable: php_imap.dll
+
+  <img width="404" height="292" alt="image" src="https://github.com/user-attachments/assets/b5718075-6346-4d66-aafd-0b57b7c9094a" />
+
+- Enable: php_intl.dll
+- Enable: php_opcache.dll
+- Refresh the osTicket site in your browser, and observe the changes
+
+<img width="940" height="617" alt="image" src="https://github.com/user-attachments/assets/45f0e7f5-7117-45bb-8e4b-b98b0b6b4ec8" />
+
+
+
+
+
+
+- Next, we are going rename: ost sampleconfig. php to ost-config.php in our C drive
+
+
+
+
 - From: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
 - To: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+
+  <img width="594" height="618" alt="image" src="https://github.com/user-attachments/assets/59996350-dc55-4c22-9a33-51d18c1f9684" />
 
 - Assign Permissions: ost-config.php
 - Disable inheritance -> Remove All
 - New Permissions -> Everyone -> All
+
+
+<img width="663" height="355" alt="image" src="https://github.com/user-attachments/assets/d01c01b0-d789-42b8-b855-1f65d016a43e" />
+
 
 
 <h2>Continue Setting up osTicket in the browser
