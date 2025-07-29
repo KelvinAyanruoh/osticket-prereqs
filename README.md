@@ -147,7 +147,7 @@ Within “c:\inetpub\wwwroot”, rename “upload” to “osTicket”
 
 
 
-- 10.** Stop and Reset ISS**
+- 10.** Stop and Reset IIS**
  
 
 
@@ -168,7 +168,7 @@ On the right, click “Browse *:80”
 
 
 
-Note that some extensions are not enabled
+Note that some extensions are not enabled on the image at the right 
 - Go back to IIS, sites -> Default -> osTicket
 
 - Double-click PHP Manager
@@ -197,7 +197,7 @@ Note that some extensions are not enabled
 
 
 
-- Next, we are going rename: ost sampleconfig. php to ost-config.php in our C drive
+- ## Next, we are going to rename: ost sampleconfig. php to ost-config.php in our C drive
 
 
 
@@ -219,51 +219,78 @@ Note that some extensions are not enabled
 <h2>Continue Setting up osTicket in the browser
  </h2>
 
-- (click Continue)
-- Name Helpdesk
+- ## (click Continue)
+
+  <img width="889" height="584" alt="image" src="https://github.com/user-attachments/assets/b52da41a-ccb1-47b3-86e5-13670ce78a16" />
+
+
+  
+- ##  Name Helpdesk
 -Default email (receives email from customers)
 
+<img width="904" height="902" alt="image" src="https://github.com/user-attachments/assets/cb289a5d-7cdd-4656-86a1-3018ab63d5ec" />
 
 
+
+
+- ## Before we continue with our installation of Osticket and database settings, we need to create a database specific to os Osticket and use that credential to log in.  We initially created our database application, but we are not yet logged in.
+- For that, we need to go back to our  OSTicket folder
 - From the “osTicket-Installation-Files” folder, install HeidiSQL.
 
--Open Heidi SQL
+- Note: Heidi is the database management system used to visually manage our data in the database
 
--Create a new session, root/root
+  <img width="441" height="384" alt="image" src="https://github.com/user-attachments/assets/99c39e4b-a313-46df-9d7d-d4b810f8fb27" />
 
--Connect to the session
 
--Create a database called “osTicket”
+- ## Open Heidi SQL
 
-<img width="889" height="584" alt="image" src="https://github.com/user-attachments/assets/b52da41a-ccb1-47b3-86e5-13670ce78a16" />
-<img width="655" height="513" alt="image" src="https://github.com/user-attachments/assets/18411a90-f615-4134-9666-e6057b830188" />
-<img width="441" height="384" alt="image" src="https://github.com/user-attachments/assets/a4ab7105-4d80-463d-827a-dec333bc0a63" />
-<img width="834" height="525" alt="image" src="https://github.com/user-attachments/assets/245ca2dd-e69e-4d9f-bf34-ae9a76a4eed9" />
 
-<img width="973" height="585" alt="image" src="https://github.com/user-attachments/assets/1d1accd0-8cce-4e1a-95b1-9bdbf7ac5a02" />
-<img width="648" height="548" alt="image" src="https://github.com/user-attachments/assets/24fa21e1-3947-4057-bb6b-0f29d587a459" />
+<img width="834" height="525" alt="image" src="https://github.com/user-attachments/assets/bcc845a9-d0f7-4a18-aaa0-c022f2691105" />
+
+
+- ## Create a new session, with user name and password root/root
+
+<img width="655" height="513" alt="image" src="https://github.com/user-attachments/assets/30bbc6a0-62cc-4fac-82fa-566a9ff954d3" />
+
+
+- ## Connect to the session
+
+<img width="973" height="585" alt="image" src="https://github.com/user-attachments/assets/79e84917-da01-43cd-9152-a43b23efcb63" />
+
+
+- ## As Connection is good, then we create a database called “osTicket”
+
+<img width="648" height="548" alt="image" src="https://github.com/user-attachments/assets/1714d711-1a0a-4c13-b508-ebc7c0be6886" />
+
+
+
 <img width="1072" height="679" alt="image" src="https://github.com/user-attachments/assets/2ffcec44-dd6f-4578-a60d-d43e8ae49795" />
 
 <h2> Continue Setting up osTicket in the browser<h2>
 
   
   
-- MySQL Database: osTicket
-  
-- MySQL Username: root
-- 
-- MySQL Password: root
-- 
+
+
+## We have created our database, now we will go back to our installation of Osticket,
+and add the credentials we used in connecting to our session.
 - Click “Install Now!”
-
-
+  
 
 
 
 <img width="853" height="1247" alt="image" src="https://github.com/user-attachments/assets/3ace9a67-30bc-4362-9a29-8b165728b1bc" />
 
+- ## The installation is successful.
+<img width="774" height="607" alt="image" src="https://github.com/user-attachments/assets/18c99249-5152-475a-a25a-d3d6c607a543" />
+
+
+# Go back to Heidi and the refresh 
+
 <img width="1004" height="663" alt="image" src="https://github.com/user-attachments/assets/e6ca1603-726e-4603-9c3a-00c8836499d5" />
-<img width="1232" height="600" alt="image" src="https://github.com/user-attachments/assets/85e247fa-a785-4ddb-b987-62726e1c55cc" />
+
+ ## Observe all the tables that Osticket will use to store all our data.
+
 
 
 
